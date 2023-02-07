@@ -57,5 +57,11 @@ class Queue:
         ## Added Assertions
         assert self.head >=0 and self.head <= self.max
         assert self.tail >=0 and self.tail <= self.max
+        if self.tail > self.head:
+            assert (self.tail-self.head) == self.size
+        if self.tail < self.head:
+            assert (self.head-self.tail) == (self.max-self.size)
+        if self.head == self.tail:
+            assert (self.size==0) or (self.size==self.max)
    
         return True
